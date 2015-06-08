@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+- '0.10'
+before_install:
+- npm install https://github.com/CooperativeHumanTissueNetwork/Vocabulary-Tooling/tarball/v1.1.0
+script: ./node_modules/chtn-vocabulary-tools/node_modules/coffee-script/bin/coffee node_modules/chtn-vocabulary-tools/index.litcoffee -f CHTN East Vocabulary Modifier - Classifications.txt -m
+deploy:
+  provider: releases
+  skip_cleanup: true
+  api_key:
+    secure: Q9rQFIgeyuUfo6JGpr60WOP/hwRTGFUfSXTyNqSOL2xCkOn1tOvlhhBeTrawxNVFBS9DBeRrYt7ikyptL8OrKI7tIyiGv3QwGQ8OGIFLoBN6FUktLWEvDqKZBI9gIdm7a8sIppNfMia8+gxYjyMUqZIbIDu3rLG1glqVoUaq/pL4QU+opmzRNAheBTpC4sLdzra78d0T5p5SxbuE8tU6XHMdbVuK4kFPeZlCPlSiZsejJdD6Ffmp+5jOiOk+eLEYaugSL5A7KPHdT1rxes+fGvBxffcNt+4PLvEzn1+klp4AWjwVByYo9FRBWvxhkmtBX0kg+6A/oOyb5JyZKok7fUIQlmaWrPM1/u+jP0jeF/muhDD19HekBtjxTQiADKzCXeR0aUqFKPRU7RGoMFuDG9azhVnos7lYrHc/2mtKL+H4IIjUZ+CV01C+Tudr+4zPjIX1/Km9iGKkCGWNOcDxRYHaR3ovPQxnDDTtHh5RUBf7xemykX4fd8o1TEoQMOlezWgkfcjTShZJwrFEqdL3lyNU8VVqAPAOvJU3WtVuwsvRGzoI0yUlXvWE0clU9DnbGyJul1HzZrK4xlr0Co/6srw3l8F0mcddlkjNEuJ/iG65C5C1I+1uloekiwNFlV/FpuT2bPBBivLUIQ46zg1ZsxSrG1GzGL0z0IVZSHEXvAw=
+  file: 'CHTN East Vocabulary Modifier - Classifications.*'
+  file_glob: true
+  on:
+    repo: drobbins/Vocabulary-Modifier-Classification
+    tags: true
