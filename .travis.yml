@@ -3,7 +3,7 @@ node_js:
 - '0.10'
 before_install:
 - npm install https://github.com/CooperativeHumanTissueNetwork/Vocabulary-Tooling/tarball/v1.1.0
-script: ./node_modules/chtn-vocabulary-tools/node_modules/coffee-script/bin/coffee node_modules/chtn-vocabulary-tools/index.litcoffee -f CHTN East Vocabulary Modifier - Classifications.txt -m
+script: ./node_modules/chtn-vocabulary-tools/node_modules/coffee-script/bin/coffee node_modules/chtn-vocabulary-tools/index.litcoffee -f CHTN East Vocabulary Modifier - Classifications.tab -m
 deploy:
   provider: releases
   skip_cleanup: true
